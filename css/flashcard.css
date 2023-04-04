@@ -1,0 +1,52 @@
+.card {
+  height: 400px;
+  width:300px;
+  margin: 20px;
+  border: 1px solid black;
+  position: relative;
+  perspective: 1000px;
+}
+
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.hide-answer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.container1{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+}
+  
+.front img{
+    height: 200px;
+    width:250px;
+border: 2px solid;
+  }
+  .show-answer{
+    position: absolute;
+bottom: 20px;
+right:  100px;
+right: 30px;
+  }
+h3 {
+  text-align: center;
+  margin-top: 50%;
+}

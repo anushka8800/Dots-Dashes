@@ -5,4 +5,3 @@ Rules for the Video platform are:
   4. Inter-character space is 3 time units.
   5. The space between words is 7 ti﻿me units.
   6. Keep your hands closer to the camera 
- 
