@@ -1,5 +1,6 @@
 const cards = document.querySelectorAll('.card');
 
+
 cards.forEach(card => {
   const showButton = card.querySelector('.show-answer');
   const hideButton = card.querySelector('.hide-answer');
@@ -14,5 +15,7 @@ cards.forEach(card => {
   hideButton.addEventListener('click', () => {
     front.style.transform = 'rotateY(0deg)';
     back.style.transform = 'rotateY(180deg)';
-  });
+  });
 });
+
+

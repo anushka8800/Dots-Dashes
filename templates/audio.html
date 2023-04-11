@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Morse Code Audio Guessing Game</title>
+    <link href="../static/css/audio.css" rel="stylesheet" />
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="../static/img/logo.jpeg" alt="logo" height="33">  Dots<span style="color:brown;">&</span>Dashes</a>
+                    </div>
+                    <div class="navbar-collapse collapse ">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home</a></li> 
+                            <li><a href="/flashcard">Flashcard Learning</a></li>
+						                <li><a href="/resources">Learning Module</a></li>
+
+                            <li><a href="/login">Login/sign-up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <h1>Morse Code Audio Learning </h1>
+            <p>Listen to the Morse code audio clip and guess what word it represents:</p>
+            <audio id="audio" src="../static/helloworld.wav"></audio>
+            <br>
+            <button id="play-button">Play Audio</button>
+            <br><br>
+            <input type="text" id="guess-input" placeholder="Enter your guess here">
+            <button id="guess-button">Check Guess</button>
+            <br><br>
+            <p id="guess-result"></p>
+        </div>
+        
+    </div>
+    <script>
+
+      function playAudio() {
+        const audio = document.getElementById("audio");
+        audio.play();
+      }
+
+      function checkGuess() {
+        var guessInput = document.getElementById("guess-input").value;
+        const guess = "hello world";
+
+        if (guessInput.toLowerCase() === guess) {
+          document.getElementById("guess-result").innerHTML = "Correct!";
+        } else {
+          document.getElementById("guess-result").innerHTML = "Incorrect. The correct word is " + guess.toUpperCase() + ".";
+        }
+      }
+
+      document.getElementById("play-button").addEventListener("click", playAudio);
+      document.getElementById("guess-button").addEventListener("click", checkGuess);
+    </script>
+  </body>
+</html>

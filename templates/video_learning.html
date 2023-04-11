@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Morse Code Audio Guessing Game</title>
+    <link href="../static/css/audio.css" rel="stylesheet" />
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/css/style.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div>
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/"><img src="../static/img/logo.jpeg" alt="logo" height="33">  Dots<span style="color:brown;">&</span>Dashes</a>
+                    </div>
+                    <div class="navbar-collapse collapse ">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home</a></li> 
+                            <li><a href="/flashcard">Flashcard Learning</a></li>
+                            <li><a href="/resources">Learning Module</a></li>
+                            <li><a href="/login">Login/sign-up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <h1>Morse Code Video Learning </h1>
+            
+                <div style="
+                    margin-top: 4rem;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    ">
+                <div style="
+                background-color: #000;
+                width: 640px;
+                height: 480px;
+                
+                ">
+                    
+                    <img src="/video" >
+                </div>
+                <img src="../static/img/morse-chart_grande.jpg" width="460px" height="100%" >
+                </div>
+            <p style="text-align: center; margin-top: 4rem;">Watch the <a id="demoButton"" style="cursor: pointer;">Demo</a>  video of our Morse code Pattern recognition and see how it works.</p>
+            <div class="video" style="display: none; ">
+              <video width="500" height="400" controls>
+              <source src="../static/MorseVideo.mp4" type="video/mp4">
+            </video>
+            <br><br>
+            </div>
+            <!-- <h3 style="text-align: center;">Go to <a href="https://github.com/anushka8800/DotsAndDashes">github</a> to access our code</h3> -->
+            <br><br>
+        </div>
+        
+    </div>
+    
+    <script>
+        const demoButton = document.getElementById("demoButton");
+        let x = document.getElementsByClassName("video");
+
+        demoButton.addEventListener('click', () => {
+            if (x[0].style.display === "none") {
+                x[0].style.display = "block";
+            } else {
+                x[0].style.display = "none";
+            }
+
+            });
+    </script>    
+    
+    </body>
+</html>
