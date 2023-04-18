@@ -38,9 +38,7 @@ morse_code_dict = {
 }
 
 from flask import Flask, render_template, Response, request
-import numpy as np
 import datetime
-import os
 
 import cv2
 import mediapipe as mp
@@ -110,12 +108,11 @@ def generate_frames():
                         #LETTER SPACES--------
                         if(upDiff>=1 and upDiff<=3):
                             str1+=" "
-                            print("_")
+                           
                         
                         #WORD SPACE-----------
                         elif(upDiff>3 and upDiff<=8):
                             str1+="/"
-                            print("/")
                         end_time=0
 
                 if(diff2<40):
@@ -136,13 +133,11 @@ def generate_frames():
                         #DOTS-------
                         if(tapDiff>=0.1 and tapDiff<=1):
                             str1+="."
-                            print(".")
                         
                             
                         #DASHES-------
                         elif(tapDiff>=1 and tapDiff<=3):
                             str1+="-"
-                            print("-")
                         start_time=0
                 #print("The time diff is: ", timeDiff)
 
@@ -188,8 +183,8 @@ def generate_frames():
         yield (b'--frame\r\n'
                 b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
         
-    print(str1)
-    print("Result: ",output)
+    # print(str1)
+    # print("Result: ",output)
     cap.release();
     cv2.destroyAllWindows()
 
